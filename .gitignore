@@ -1,6 +1,9 @@
-pytest_cache/
+# Entorno virtual de Python
+venv/
+
+# Caché de pruebas
+.pytest_cache/
+
+# Archivos temporales de Python
 _pycache_/
 *.pyc
-.venv/
-venv/
-.env
