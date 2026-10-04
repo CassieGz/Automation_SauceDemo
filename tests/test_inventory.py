@@ -2,10 +2,14 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 def test_inventory():
     driver=webdriver.Chrome()
-    # vuelvo a copiar el login porque se vuelve a repetir
+    
     try: 
+        # vuelvo a copiar el login porque se vuelve a repetir
         driver.get("https://www.saucedemo.com/")
 
         user= driver.find_element(By.ID,"user-name")
@@ -19,9 +23,11 @@ def test_inventory():
 
         # verificar que el titulo esta correcto
         assert driver.title == "Swag Labs"
+
+        wait = WebDriverWait(driver, 10)
     
         #Selecciono a todos los elem de la misma clase
-        products =driver.find_elements(By.CLASS_NAME,"inventory_item")
+        products = wait.until(EC.visibility_of_all_elements_located((By.CLASS_NAME, "inventory_item")))
 
         ##print(products)
         print(f"cantidad de elementos:{len(products)}")
