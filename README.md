@@ -55,7 +55,9 @@ pre_entrega/
 ├── venv/                  # Entorno virtual con librerías aisladas
 ├── tests/                 # Carpeta con los scripts de prueba
 │   ├── test_login.py      # Casos de prueba para el flujo de autenticación
-│   └── test_inventory.py  # Casos de prueba para la vista de productos
+│   └── test_inventory.py  # Casos de prueba para la vista de
+productos
+│   └── test_cart.py  # Casos de prueba para el flujo del carrito
 │
 ├── reports/               # Reportes HTML generados automáticamente
 │   └── reporte.html
